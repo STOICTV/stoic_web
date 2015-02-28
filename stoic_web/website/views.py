@@ -84,6 +84,7 @@ class VideoIndex(ListView):
     model=Video
     template_name='video_index.html'
     paginate_by=12
+    queryset = Video.objects.filter(hidden=False)
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -100,6 +101,10 @@ class VideoDetailView( DetailView):
     template_name='video_detail.html'
 
     slug_field='youtube_id'
+
+    def get_queryset(self):
+        qs = super(VideoDetailView, self).get_queryset()
+        return qs.filter(hidden=False)
 
 
 class QuestionsLiveCreateView(CreateView):

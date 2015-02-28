@@ -35,6 +35,7 @@ class Video(models.Model):
     programmes=models.ManyToManyField(Programme, blank=True)
     genre=models.ManyToManyField(Genre,blank=True)
     featured=models.BooleanField( default=False)
+    hidden = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.title
