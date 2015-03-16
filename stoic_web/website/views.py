@@ -33,7 +33,7 @@ class IndexView(TemplateView):
             kwargs['next_event'] = evs[0]
 
         # This is an unacceptable way of setting this...
-        kwargs['live_streaming'] = None #'Live from (near) The Albert Hall: Immortal Machinery'
+        kwargs['live_streaming'] = None
 
         return kwargs
 
