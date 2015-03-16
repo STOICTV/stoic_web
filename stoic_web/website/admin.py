@@ -8,7 +8,7 @@ from import_export.admin import ImportExportModelAdmin
 
 class VideoAdmin(admin.ModelAdmin):
 	fieldsets = [
-	    (None,                {'fields': ['youtube_id','title','description', 'featured']}),
+	    (None,                {'fields': ['youtube_id','title','description', 'featured', 'hidden']}),
 	    ('Categories',        {'fields': ['programmes', 'genre']}),
 	]
 
